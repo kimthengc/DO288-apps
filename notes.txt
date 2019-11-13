@@ -6,10 +6,10 @@ https://rol.redhat.com/rol/rhz/login?offering=41553263
 
 /var/lib/container/storage , find image by id --> this is local storage/registry
 
-
 oc get pods -n openshift-image-registry image-registry -o json 
 -- this is the openshift internal registry
 -- for the s2i the output image stream will be stored in the openshift registry
+-- another usage or way to have image in openshift internal registry, is to manually push the image to it
 
 
 when we scale the pods, openshfit wil try to choose another nodes/machine to create the
