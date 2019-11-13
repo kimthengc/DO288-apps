@@ -1,0 +1,16 @@
+/home/student/DO288-apps/
+
+git checkout notes
+
+https://rol.redhat.com/rol/rhz/login?offering=41553263
+
+/var/lib/container/storage , find image by id --> this is local storage/registry
+
+
+oc get pods -n openshift-image-registry image-registry -o json 
+-- this is the openshift internal registry
+-- for the s2i the output image stream will be stored in the openshift registry
+
+
+when we scale the pods, openshfit wil try to choose another nodes/machine to create the
+containers, each of the node will have a list of images, if the node does not have, then will get downloaded
