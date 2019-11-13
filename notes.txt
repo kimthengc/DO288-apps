@@ -21,7 +21,6 @@ oc export
 
 oc create-project -f template -n openshift-namespace --> will create under openshift project, which can be shared by others/all project
 
-
 oc get template -n openshift
 
 oc process --paramters -n openshift nodejs-mongodb-example
