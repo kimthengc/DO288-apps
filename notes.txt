@@ -14,3 +14,15 @@ oc get pods -n openshift-image-registry image-registry -o json
 
 when we scale the pods, openshfit wil try to choose another nodes/machine to create the
 containers, each of the node will have a list of images, if the node does not have, then will get downloaded
+
+
+oc get dc,bc,svc,is,route -o yaml > file.yaml   -- redirect it to a file, version 3.X get use 
+oc export
+
+oc create-project -f template -n openshift-namespace --> will create under openshift project, which can be shared by others/all project
+
+
+oc get template -n openshift
+
+oc process --paramters -n openshift nodejs-mongodb-example
+oc new-app --template template-name --name myapp --param-file paramfile
