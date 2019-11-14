@@ -1,0 +1,46 @@
+/home/student/DO288-apps/
+
+git checkout notes
+
+https://rol.redhat.com/rol/rhz/login?offering=41553263
+
+/var/lib/container/storage , find image by id --> this is local storage/registry
+
+oc get pods -n openshift-image-registry image-registry -o json 
+-- this is the openshift internal registry
+-- for the s2i the output image stream will be stored in the openshift registry
+-- another usage or way to have image in openshift internal registry, is to manually push the image to it
+
+
+when we scale the pods, openshfit wil try to choose another nodes/machine to create the
+containers, each of the node will have a list of images, if the node does not have, then will get downloaded
+
+
+oc get dc,bc,svc,is,route -o yaml > file.yaml   -- redirect it to a file, version 3.X get use 
+oc export
+
+oc create-project -f template -n openshift-namespace --> will create under openshift project, which can be shared by others/all project
+
+oc get template -n openshift
+
+oc process --paramters -n openshift nodejs-mongodb-example
+oc new-app --template template-name --name myapp --param-file paramfile
+
+oc get events -w  --> to watch the events
+watch -n 2 oc get pods  --> to watch every 2 seconds
+oc set env dc/mysql HOOK_RETRIES=5
+
+
+
+RHT_OCP4_MASTER_API=https://api.ocp-ap1.prod.nextcle.com:6443
+RHT_OCP4_WILDCARD_DOMAIN=apps.ocp-ap1.prod.nextcle.com
+RHT_OCP4_CLUSTER_ID=8671d745-ae81-4571-9b98-5091a3ffbcae
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.ocp-ap1.prod.nextcle.com
+RHT_OCP4_DEV_USER=kimthengc
+RHT_OCP4_DEV_PASSWORD=c120525061c4492c81e4202c0fbef15a
+RHT_OCP4_GITHUB_USER=kimthengc
+RHT_OCP4_QUAY_USER=kimthengc
+
+
+
+
