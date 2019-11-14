@@ -25,3 +25,8 @@ oc get template -n openshift
 
 oc process --paramters -n openshift nodejs-mongodb-example
 oc new-app --template template-name --name myapp --param-file paramfile
+
+oc get events -w  --> to watch the events
+
+
+
