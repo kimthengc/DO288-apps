@@ -27,6 +27,20 @@ oc process --paramters -n openshift nodejs-mongodb-example
 oc new-app --template template-name --name myapp --param-file paramfile
 
 oc get events -w  --> to watch the events
+watch -n 2 oc get pods  --> to watch every 2 seconds
+oc set env dc/mysql HOOK_RETRIES=5
+
+
+
+RHT_OCP4_MASTER_API=https://api.ocp-ap1.prod.nextcle.com:6443
+RHT_OCP4_WILDCARD_DOMAIN=apps.ocp-ap1.prod.nextcle.com
+RHT_OCP4_CLUSTER_ID=8671d745-ae81-4571-9b98-5091a3ffbcae
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.ocp-ap1.prod.nextcle.com
+RHT_OCP4_DEV_USER=kimthengc
+RHT_OCP4_DEV_PASSWORD=c120525061c4492c81e4202c0fbef15a
+RHT_OCP4_GITHUB_USER=kimthengc
+RHT_OCP4_QUAY_USER=kimthengc
+
 
 
 
