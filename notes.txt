@@ -45,4 +45,9 @@ RHT_OCP4_QUAY_USER=kimthengc
 
 
 
+oc create service externalname NAME
+oc get <pod_name> -o yaml --export  | wc -l   --> to check the no of line wc -l
 
+oc get <pod_name> -o yaml --export  > two
+then edit the two --> vi two
+oc create -f two
